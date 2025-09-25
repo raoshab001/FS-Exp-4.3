@@ -1,0 +1,25 @@
+This project is a tiny ticket-booking API built with Express.js that safely handles multiple people trying to grab the same seat at the same time. Seats can be “locked” for a short window, so no one else can take them while the buyer completes the booking. If the buyer doesn’t confirm in time, the lock expires automatically and the seat becomes available again.
+
+Key features
+
+Simple REST API: Endpoints to view seats, lock a seat, and confirm a booking using clean HTTP methods and JSON responses.
+
+Safe seat locking: A one‑minute temporary lock prevents double booking while a user completes payment or details.
+
+Auto‑expiry: Locks expire automatically if not confirmed, returning the seat to the available pool without manual cleanup.
+
+Clear error paths: Helpful messages for common conflicts like “already locked,” “already booked,” or “not locked yet.”
+
+In‑memory state: Fast and easy to run locally with no database setup, ideal for learning concurrency basics.
+
+Learning outcomes
+
+Understand concurrency basics in a web API by designing a mutual‑exclusion flow around a scarce resource (seats).
+
+Implement time‑bound locks with timers to prevent race conditions and release resources automatically.
+
+Practice robust route handling in Express.js with proper HTTP status codes and consistent JSON messages.
+
+Model simple, in‑memory state safely and reason about edge cases like lock expiration and conflicting users.
+
+Build a clean testing workflow using concurrent requests to validate that locking prevents double booking.
